@@ -33,4 +33,5 @@ and fill with API credentials from your spotify developer account.
 - [ ] Check for existing playlist (in current week) and prompt for confirmation.
 - [ ] Check for duplicate (see above, but it's not likely to duplicate two same genres). In following weeks there shouldn't be
  the same playlist drawed as was previously.
+- [ ] Web interface, publicly available.
 - [ ] Some analysys.
