@@ -58,21 +58,24 @@ def save_spotify_playlist(c_dict, username, credentials):
         c_dict (dict): country: genres
         username (string): spotify username
         credentials (dict): dict eg. loaded from json. dict_keys(['client_ID', 'client_SECRET', 'redirect_uri'])
+    Returns:
+
     """
     scope = "playlist-modify-public"
     # sp_playlist = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=cred.client_ID,
     #     client_secret= cred.client_SECRET, redirect_uri=cred.redirect_uri, scope=scope, open_browser=False))
     sp_playlist = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=credentials['client_ID'],
-        client_secret= credentials['client_SECRET'], redirect_uri=credentials['redirect_URI'], scope=scope, open_browser=False))
+        client_secret= credentials['client_SECRET'], redirect_uri=credentials['redirect_uri'], scope=scope, open_browser=False))
     
     random_country, random_genre = get_random_notEmpty_country_genres(c_dict)
     random_genre = random.choice(random_genre) # Losowanie Kategorii
-    search = sp_playlist.search(make_query_search(random_genre),market='PL',type='track')
+    search = sp_playlist.search(make_query_search(random_genre),market='PL',type='track', limit=100)
     uris = [item['uri'] for item in search['tracks']['items']]
 
-    user = 'papah4'
     playlist_title, playlist_descr = playlist_title_descr(random_country, random_genre)
-    playlist = sp_playlist.user_playlist_create(user=user, name=playlist_title, public=True,description=playlist_descr)
+    playlist = sp_playlist.user_playlist_create(user=username, name=playlist_title, public=True,description=playlist_descr)
     playlist_id = playlist['id']
 
     sp_playlist.user_playlist_add_tracks(user, playlist_id, tracks=uris, position=None)
+    
+    return random_country, random_genre

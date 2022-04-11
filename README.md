@@ -1,5 +1,8 @@
 # Every week, every new playlist
 
+This week I'm listening to
+{{current_week.md}}
+
 Scripts in this repositories can let you generate randomly playlist from Spotify's nation-origin genres.
 
 List of genres were taken from [everynoise.com/everynoise1d.cgi?scope=all](https://everynoise.com/everynoise1d.cgi?scope=all).
