@@ -76,6 +76,6 @@ def save_spotify_playlist(c_dict, username, credentials):
     playlist = sp_playlist.user_playlist_create(user=username, name=playlist_title, public=True,description=playlist_descr)
     playlist_id = playlist['id']
 
-    sp_playlist.user_playlist_add_tracks(user, playlist_id, tracks=uris, position=None)
+    sp_playlist.user_playlist_add_tracks(username, playlist_id, tracks=uris, position=None)
     
     return random_country, random_genre
