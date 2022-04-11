@@ -1,0 +1,6 @@
+# api config file
+api_credentials.json
+.cache
+__pycache__
+config.json
+*.ipynb
