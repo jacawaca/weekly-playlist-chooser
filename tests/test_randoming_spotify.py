@@ -17,4 +17,3 @@ class Test_randoming_spotify(unittest.TestCase):
         self.assertRegex(descr, reg)
 if __name__ == '__main__':
     unittest.main()
-
