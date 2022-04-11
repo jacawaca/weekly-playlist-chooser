@@ -1,4 +1,13 @@
 def scrap_c_dict(save_file=False, file_name='c_dict.json'):
+    """Scraping data of Country vs genres on spotify
+
+    Args:
+        save_file (bool, optional): save to file?. Defaults to False.
+        file_name (str, optional): Saved dict. Defaults to 'c_dict.json'.
+
+    Returns:
+        dict: dict of country vs genres
+    """
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     browser = webdriver.Firefox()
@@ -63,6 +72,14 @@ def scrap_c_dict(save_file=False, file_name='c_dict.json'):
     return c_dict
 
 def read_c_dict(file_name='c_dict.json'):
+    """from json
+
+    Args:
+        file_name (str, optional): json. Defaults to 'c_dict.json'.
+
+    Returns:
+        dict: c_dict
+    """
     import json
     with open(file_name, 'r') as f:
         c_dict = json.load(f)

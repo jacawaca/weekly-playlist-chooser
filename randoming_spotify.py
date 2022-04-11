@@ -2,6 +2,14 @@ import random
 import re
 
 def get_random_notEmpty_country_genres(c_dict):
+    """Drawing genres and countries from previously generated/loaded c_dict - dictionary of spotifies genres
+
+    Args:
+        c_dict (dict): spotify country: genres
+
+    Returns:
+        string: string of country and genre
+    """
     while True:
         country, genres = random.choice(list(c_dict.items()))
         if len(genres) > 0:
@@ -9,6 +17,14 @@ def get_random_notEmpty_country_genres(c_dict):
     return country, genres
 
 def make_query_search(genre):
+    """Spotify search query
+
+    Args:
+        genre (string): 
+
+    Returns:
+        string: 
+    """
     genre_ = re.sub(' ', '_', genre)
     return rf'genre:{genre_}'
 
@@ -16,6 +32,15 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 def playlist_title_descr(country, genre):
+    """Preparing title string with current week (in year scale) number
+
+    Args:
+        country (string): 
+        genre (string): 
+
+    Returns:
+        string: 
+    """
     import datetime
     n_of_week = datetime.date.today().isocalendar()[1]
     
@@ -27,6 +52,13 @@ def playlist_title_descr(country, genre):
     return playlist_title, playlist_descr
 
 def save_spotify_playlist(c_dict, username, credentials):
+    """interface to spotify allowing to create and push randomly choosen playlist to Spotify
+
+    Args:
+        c_dict (dict): country: genres
+        username (string): spotify username
+        credentials (dict): dict eg. loaded from json. dict_keys(['client_ID', 'client_SECRET', 'redirect_uri'])
+    """
     scope = "playlist-modify-public"
     # sp_playlist = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=cred.client_ID,
     #     client_secret= cred.client_SECRET, redirect_uri=cred.redirect_uri, scope=scope, open_browser=False))
