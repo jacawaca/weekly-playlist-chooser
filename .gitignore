@@ -4,3 +4,4 @@ api_credentials.json
 __pycache__
 config.json
 *.ipynb
+.vscode
