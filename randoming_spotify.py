@@ -44,7 +44,7 @@ def playlist_title_descr(country, genre):
     import datetime
     n_of_week = datetime.date.today().isocalendar()[1]
     
-    playlist_title = f'Tydzień {n_of_week} - {country}'
+    playlist_title = f'Tydzień {n_of_week} - {country}' #TODO Tydzień [0-9] roku 2022 itp
     playlist_title = playlist_title.title()
     
     playlist_descr = f'Tydzień {n_of_week}. Muzyka z gatunku: {genre.title()} z {country.title()}'
@@ -69,13 +69,19 @@ def save_spotify_playlist(c_dict, username, credentials):
     
     random_country, random_genre = get_random_notEmpty_country_genres(c_dict)
     random_genre = random.choice(random_genre) # Losowanie Kategorii
-    search = sp_playlist.search(make_query_search(random_genre),market='PL',type='track', limit=100)
+    search = sp_playlist.search(make_query_search(random_genre),market='PL',type='track', limit=50)
     uris = [item['uri'] for item in search['tracks']['items']]
 
     playlist_title, playlist_descr = playlist_title_descr(random_country, random_genre)
     playlist = sp_playlist.user_playlist_create(user=username, name=playlist_title, public=True,description=playlist_descr)
     playlist_id = playlist['id']
+    playlist_url = playlist['external_urls']['spotify']
 
     sp_playlist.user_playlist_add_tracks(username, playlist_id, tracks=uris, position=None)
     
-    return random_country, random_genre
+    history_data = {'title': playlist_title, 'descr': playlist_descr, 'id': playlist_id, 'url': playlist_url}
+    
+    from update_info import save_playlist_info2json
+    save_playlist_info2json(history_data)
+    
+    return playlist_id
