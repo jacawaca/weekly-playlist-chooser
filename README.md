@@ -2,7 +2,7 @@
 # Every week, every new playlist
 
 This week I'm listening to
-Tydzień 16 - Dominica[Spotify Link](https://open.spotify.com/playlist/3uoItiyaJjWOgFpJB327rz)
+Tydzień 16 - Tanzania[Spotify Link](https://open.spotify.com/playlist/6wZpKGwbgKsEvpg8fMnZNP)
 Scripts in this repositories can let you generate randomly playlist from Spotify's nation-origin genres.
 
 List of genres were taken from [everynoise.com/everynoise1d.cgi?scope=all](https://everynoise.com/everynoise1d.cgi?scope=all).
