@@ -6,3 +6,5 @@ config.json
 *.ipynb
 .vscode
 .vscode/
+.ipynb_checkpoints
+infos/*

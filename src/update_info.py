@@ -1,12 +1,3 @@
-import string
-
-
-info_preamble = """
-# Every week, every new playlist
-
-This week I'm listening to
-"""
-
 def save_playlist_info2json(data, json_path='infos/playlist_history.json'):
     with open(json_path, 'r+') as f:
         import json
