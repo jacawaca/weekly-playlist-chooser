@@ -1,8 +1,6 @@
 
 # Every week, every new playlist
 
-This week I'm listening to
-Tydzień 18 - Mexico[Spotify Link](https://open.spotify.com/playlist/4lBPXYsuC55wcn6cs54bdV)
 Scripts in this repositories can let you generate randomly playlist from Spotify's nation-origin genres.
 
 List of genres were taken from [everynoise.com/everynoise1d.cgi?scope=all](https://everynoise.com/everynoise1d.cgi?scope=all).
