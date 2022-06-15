@@ -14,11 +14,13 @@ Create `config.json` like this
 
 ```json
 {
-    "username": ""
+    "username": "",
+    "api_credentials": "",
+    "data": ""
 }
 ```
 
-and fill with your spotify username.
+and fill right information.
 Then `api_credentials.json` like this
 
 ```json
@@ -30,6 +32,25 @@ Then `api_credentials.json` like this
 ```
 
 and fill with API credentials from your spotify developer account.
+
+## Instalation on Raspberry Pi
+
+Install appropriate packages (spotipy will be sufficient) in venv via pip. Create `job.sh` file like this
+
+```sh
+#! /bin/bash
+SCRIPT_PATH='path2dirwithmainpy'
+cd $SCRIPT_PATH
+path2python/python -m main
+```
+
+Then one can create cron job like this.
+
+```sh
+crontab -e```
+add the line for the job. Eg.
+```0 0 * * MON /home/pi/src/weekly-playlist-chooser/job.sh```
+this will make script run every Monday at midnight.
 
 ## TODO
 

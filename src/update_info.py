@@ -37,8 +37,8 @@ def update_info(playlist_id, project_info_path='infos/project_info.md', current_
     project_info = ''
     with open(project_info_path, 'r') as f:
         project_info = f.read()
-    with open(current_playlist_path,'w') as f:
-        f.write(info_preamble)
+    # with open(current_playlist_path,'w') as f:
+        # f.write(info_preamble)
         
         playlist_info = read_playlist_info(playlist_id)
         
@@ -46,7 +46,7 @@ def update_info(playlist_id, project_info_path='infos/project_info.md', current_
         f.write(current_playlist_line + '\n')   
         
         with open(README_path,'w') as readme:
-            readme.write(info_preamble)
+            # readme.write(info_preamble)
             readme.write(current_playlist_line + '\n')    
             readme.write(project_info)
         
