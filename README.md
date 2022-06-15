@@ -45,7 +45,9 @@ path2python/python -m main
 Then one can create cron job like this.
 
 ```sh
-crontab -e```
+crontab -e
+```
+
 add the line for the job. Eg.
 ```0 0 * * MON /home/pi/src/weekly-playlist-chooser/job.sh```
 this will make script run every Monday at midnight.
