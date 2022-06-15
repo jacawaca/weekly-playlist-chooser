@@ -13,8 +13,8 @@ Create `config.json` like this
 ```json
 {
     "username": "",
-    "api_credentials": "",
-    "data": ""
+    "api_credentials": "path2credentialsjson",
+    "data": "path2c_dictjson"
 }
 ```
 
