@@ -49,7 +49,7 @@ crontab -e
 ```
 
 add the line for the job. Eg.
-```0 0 * * MON /home/pi/src/weekly-playlist-chooser/job.sh```
+```0 0 * * MON path/to/job.sh```
 this will make script run every Monday at midnight.
 
 ## TODO
